@@ -15,9 +15,16 @@ enum Drink: String {
     case redbull = "レッドブル"
 }
 
-struct Jihanki{
-    func buttonPush(money: Int, drink: Drink) -> String?{
-        if money == 100 || money == 200 {
+class Jihanki{
+    
+    var deposit: Int = 0
+    
+    func insert100en() {
+        deposit += 100
+    }
+    
+    func buttonPush(drink: Drink) -> String?{
+        if deposit == 100 || deposit == 200 {
             return drink.rawValue
         }
         return nil
