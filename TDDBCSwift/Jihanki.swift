@@ -12,11 +12,12 @@ enum Drink: String {
     case coke = "コーラ"
     case oolong = "烏龍茶"
     case coffee = "コーヒー"
+    case redbull = "レッドブル"
 }
 
 struct Jihanki{
     func buttonPush(money: Int, drink: Drink) -> String?{
-        if money == 100{
+        if money == 100 || money == 200 {
             return drink.rawValue
         }
         return nil

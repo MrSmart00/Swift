@@ -4,6 +4,8 @@ import XCTest
 // TODO: [*] 100円を入れるとコーラが出る
 // TODO: [*] 100円以外は入れられない
 // TODO: [*] ボタンを押すと烏龍茶が出る
+// TODO: [*] 200円でレッドブルが買える
+// TODO: [] MoneyのIntをリファクタリングする
 
 
 class ExampleXCTestTests: XCTestCase {
@@ -24,6 +26,12 @@ class ExampleXCTestTests: XCTestCase {
         let jihanki = Jihanki()
         let result = jihanki.buttonPush(money: 100, drink: Drink.oolong)
         XCTAssert(result == "烏龍茶")
+    }
+
+    func test200円を入れるとレッドブルが出る() {
+        let jihanki = Jihanki()
+        let result = jihanki.buttonPush(money: 200, drink: Drink.redbull)
+        XCTAssert(result == "レッドブル")
     }
 
 }
