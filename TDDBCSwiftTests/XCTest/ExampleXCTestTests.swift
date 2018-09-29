@@ -5,6 +5,7 @@ import XCTest
 // TODO: [*] 100円を入れるとコーラが出る
 // TODO: [*] 100円以外は入れられない
 // TODO: [*] ボタンを押すと烏龍茶が出る
+// TODO: [*] 他の飲み物を追加
 
 
 class ExampleXCTestTests: XCTestCase {
@@ -33,4 +34,9 @@ class ExampleXCTestTests: XCTestCase {
         XCTAssert(result == "烏龍茶")
     }
 
+    func test100円を入れるとコーヒーが出る() {
+        let jihanki = Jihanki()
+        let result = jihanki.buttonPush(money: 100, drink: Drink.coffee)
+        XCTAssert(result == "コーヒー")
+    }
 }

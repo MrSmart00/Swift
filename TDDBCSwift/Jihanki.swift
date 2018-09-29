@@ -11,6 +11,7 @@ import Foundation
 enum Drink: String {
     case coke = "コーラ"
     case oolong = "烏龍茶"
+    case coffee = "コーヒー"
 }
 
 struct Jihanki{
