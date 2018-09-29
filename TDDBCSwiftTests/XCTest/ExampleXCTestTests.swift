@@ -3,7 +3,7 @@ import XCTest
 
 // TODO: [*] ボタンを押すとコーラが出る
 // TODO: [*] 100円を入れるとコーラが出る
-// TODO: [] 100円以外は入れられない
+// TODO: [*] 100円以外は入れられない
 
 class ExampleXCTestTests: XCTestCase {
     
@@ -19,4 +19,9 @@ class ExampleXCTestTests: XCTestCase {
         XCTAssert(result == "コーラ")
     }
     
+    func test100円以外は入れられない() {
+        let jihanki = Jihanki()
+        let result = jihanki.buttonPush(money: 101)
+        XCTAssert(result != "コーラ")
+    }
 }

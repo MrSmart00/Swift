@@ -13,7 +13,10 @@ struct Jihanki{
         return "コーラ"
     }
     
-    func buttonPush(money: Int) -> String{
-        return "コーラ"
+    func buttonPush(money: Int) -> String?{
+        if money == 100{
+            return "コーラ"
+        }
+        return nil
     }
 }
