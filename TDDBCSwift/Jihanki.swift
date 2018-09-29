@@ -15,10 +15,6 @@ enum Drink: String {
 }
 
 struct Jihanki{
-    func buttonPush() -> String{
-        return "コーラ"
-    }
-    
     func buttonPush(money: Int, drink: Drink) -> String?{
         if money == 100{
             return drink.rawValue
