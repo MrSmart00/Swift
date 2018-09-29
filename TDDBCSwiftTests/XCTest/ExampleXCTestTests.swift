@@ -6,6 +6,8 @@ import XCTest
 // TODO: [*] ボタンを押すと烏龍茶が出る
 // TODO: [*] 200円でレッドブルが買える
 // TODO: [*] MoneyのIntをリファクタリングする
+// TODO: [*] 100円を入れてもレッドブルが買えない
+// TODO: [] ドリンクの値段のリファクタリングする(要検討)
 
 
 class ExampleXCTestTests: XCTestCase {
@@ -13,14 +15,16 @@ class ExampleXCTestTests: XCTestCase {
     func test100円を入れるとコーラが出る() {
         let jihanki = Jihanki()
         jihanki.insert100en()
-        let result = jihanki.buttonPush(drink: Drink.coke)
+        let coke = Drink(name: DrinkType.coke, price: 100)
+        let result = jihanki.buttonPush(drink: coke)
         XCTAssert(result == "コーラ")
     }
     
     func test100円を入れると烏龍茶が出る() {
         let jihanki = Jihanki()
         jihanki.insert100en()
-        let result = jihanki.buttonPush(drink: Drink.oolong)
+        let oolong = Drink(name: DrinkType.oolong, price: 100)
+        let result = jihanki.buttonPush(drink: oolong)
         XCTAssert(result == "烏龍茶")
     }
 
@@ -28,8 +32,16 @@ class ExampleXCTestTests: XCTestCase {
         let jihanki = Jihanki()
         jihanki.insert100en()
         jihanki.insert100en()
-        let result = jihanki.buttonPush(drink: Drink.redbull)
+        let redbull = Drink(name: DrinkType.redbull, price: 200)
+        let result = jihanki.buttonPush(drink: redbull)
         XCTAssert(result == "レッドブル")
     }
 
+    func test100円を入れてもレッドブルが買えない() {
+        let jihanki = Jihanki()
+        jihanki.insert100en()
+        let redbull = Drink(name: DrinkType.redbull, price: 200)
+        let result = jihanki.buttonPush(drink: redbull)
+        XCTAssert(result == nil)
+    }
 }
