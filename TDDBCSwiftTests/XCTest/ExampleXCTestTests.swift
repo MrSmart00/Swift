@@ -8,6 +8,7 @@ import XCTest
 // TODO: [*] MoneyのIntをリファクタリングする
 // TODO: [*] 100円を入れてもレッドブルが買えない
 // TODO: [] ドリンクの値段のリファクタリングする(要検討)
+// TODO: [*] 100円入れてボタン複数回押してもドリンクは一本しか出ない
 
 
 class ExampleXCTestTests: XCTestCase {
@@ -43,5 +44,14 @@ class ExampleXCTestTests: XCTestCase {
         let redbull = Drink(name: DrinkType.redbull, price: 200)
         let result = jihanki.buttonPush(drink: redbull)
         XCTAssert(result == nil)
+    }
+    
+    func test100円入れてボタン複数回押してもドリンクは一本しか出ない() {
+        let jihanki = Jihanki()
+        jihanki.insert100en()
+        let coke = Drink(name: DrinkType.coke, price: 100)
+        let result1 = jihanki.buttonPush(drink: coke)
+        let result2 = jihanki.buttonPush(drink: coke)
+        XCTAssert(result1 == "コーラ" && result2 == nil)
     }
 }

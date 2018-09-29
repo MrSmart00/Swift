@@ -30,6 +30,7 @@ class Jihanki{
     
     func buttonPush(drink: Drink) -> String? {
         if drink.price <= deposit {
+            deposit -= drink.price
             return drink.name.rawValue
         }
         return nil
