@@ -10,7 +10,7 @@ import XCTest
 // TODO: [*] ドリンクの値段のリファクタリングする(要検討)
 // TODO: [*] 100円入れてボタン複数回押してもドリンクは一本しか出ない
 // TODO: [*] 入れたお金に応じて、買えるもののボタンが光る
-// TODO: [] 10円、50円、500円も使えるようになる
+// TODO: [*] 10円、50円、500円も使えるようになる
 
 class ExampleXCTestTests: XCTestCase {
     
@@ -68,6 +68,18 @@ class ExampleXCTestTests: XCTestCase {
     func test500円も使えるようになる() {
         let jihanki = Jihanki()
         jihanki.insert(.fiveHundred)
+        let result = jihanki.pushButton(drink: .coke)
+        XCTAssert(result == "コーラ")
+    }
+    
+    func test10円と50円が使えるようになる() {
+        let jihanki = Jihanki()
+        jihanki.insert(.ten)
+        jihanki.insert(.ten)
+        jihanki.insert(.ten)
+        jihanki.insert(.ten)
+        jihanki.insert(.ten)
+        jihanki.insert(.fifty)
         let result = jihanki.pushButton(drink: .coke)
         XCTAssert(result == "コーラ")
     }

@@ -9,6 +9,8 @@
 import Foundation
 
 enum CoinType: Int {
+    case ten = 10
+    case fifty = 50
     case hundred = 100
     case fiveHundred = 500
 }
