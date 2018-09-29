@@ -12,4 +12,8 @@ struct Jihanki{
     func buttonPush() -> String{
         return "コーラ"
     }
+    
+    func buttonPush(money: Int) -> String{
+        return "コーラ"
+    }
 }
