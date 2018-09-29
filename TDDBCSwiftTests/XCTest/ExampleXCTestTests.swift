@@ -11,7 +11,7 @@ import XCTest
 // TODO: [*] 100円入れてボタン複数回押してもドリンクは一本しか出ない
 // TODO: [*] 入れたお金に応じて、買えるもののボタンが光る
 // TODO: [*] 10円、50円、500円も使えるようになる
-// TODO: [] お釣りが返ってくる
+// TODO: [*] お釣りが返ってくる
 
 class ExampleXCTestTests: XCTestCase {
     
