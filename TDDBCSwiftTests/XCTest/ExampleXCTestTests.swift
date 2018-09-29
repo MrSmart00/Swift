@@ -11,6 +11,7 @@ import XCTest
 // TODO: [*] 100円入れてボタン複数回押してもドリンクは一本しか出ない
 // TODO: [*] 入れたお金に応じて、買えるもののボタンが光る
 // TODO: [*] 10円、50円、500円も使えるようになる
+// TODO: [] お釣りが返ってくる
 
 class ExampleXCTestTests: XCTestCase {
     
@@ -35,32 +36,32 @@ class ExampleXCTestTests: XCTestCase {
         let jihanki = createEnptyJihanki()
         jihanki.insert(.hundred)
         let result = jihanki.pushButton(drink: .coke)
-        XCTAssert(result == "コーラ")
+        XCTAssert(result.name == "コーラ")
     }
     
     func test100円を入れると烏龍茶が出る() {
         let jihanki = create100YenJihanki()
         let result = jihanki.pushButton(drink: .oolong)
-        XCTAssert(result == "烏龍茶")
+        XCTAssert(result.name == "烏龍茶")
     }
 
     func test200円を入れるとレッドブルが出る() {
         let jihanki = create200YenJihanki()
         let result = jihanki.pushButton(drink: .redbull)
-        XCTAssert(result == "レッドブル")
+        XCTAssert(result.name == "レッドブル")
     }
 
     func test100円を入れてもレッドブルが買えない() {
         let jihanki = create100YenJihanki()
         let result = jihanki.pushButton(drink: .redbull)
-        XCTAssert(result == nil)
+        XCTAssert(result.name == nil)
     }
     
     func test100円入れてボタン複数回押してもドリンクは一本しか出ない() {
         let jihanki = create100YenJihanki()
         let result1 = jihanki.pushButton(drink: .coke)
         let result2 = jihanki.pushButton(drink: .coke)
-        XCTAssert(result1 == "コーラ" && result2 == nil)
+        XCTAssert(result1.name == "コーラ" && result2.name == nil)
     }
     
     func test100円入れるとコーラボタンが光る() {
@@ -79,7 +80,7 @@ class ExampleXCTestTests: XCTestCase {
         let jihanki = createEnptyJihanki()
         jihanki.insert(.fiveHundred)
         let result = jihanki.pushButton(drink: .coke)
-        XCTAssert(result == "コーラ")
+        XCTAssert(result.name == "コーラ")
     }
     
     func test10円と50円が使えるようになる() {
@@ -91,6 +92,14 @@ class ExampleXCTestTests: XCTestCase {
         jihanki.insert(.ten)
         jihanki.insert(.fifty)
         let result = jihanki.pushButton(drink: .coke)
-        XCTAssert(result == "コーラ")
+        XCTAssert(result.name == "コーラ")
+    }
+    
+    func testお釣りが返ってくる() {
+        let jihanki = create100YenJihanki()
+        jihanki.insert(.ten)
+        jihanki.insert(.ten)
+        let result = jihanki.pushButton(drink: .coke)
+        XCTAssert(result.change == 20)
     }
 }

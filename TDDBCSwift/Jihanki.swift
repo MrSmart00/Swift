@@ -37,12 +37,21 @@ class Jihanki{
         deposit += coinType.rawValue
     }
     
-    func pushButton(drink: DrinkType) -> String? {
+//    func pushButton(drink: DrinkType) -> String? {
+//        if let price = itemList[drink], price <= deposit {
+//            deposit -= price
+//            return drink.rawValue
+//        } else {
+//            return nil
+//        }
+//    }
+    
+    func pushButton(drink: DrinkType) -> (name: String?, change: Int) {
         if let price = itemList[drink], price <= deposit {
             deposit -= price
-            return drink.rawValue
+            return (drink.rawValue, deposit)
         } else {
-            return nil
+            return (nil, deposit)
         }
     }
     
