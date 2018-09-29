@@ -12,6 +12,7 @@ import XCTest
 // TODO: [*] 入れたお金に応じて、買えるもののボタンが光る
 // TODO: [*] 10円、50円、500円も使えるようになる
 // TODO: [*] お釣りが返ってくる
+// TODO: [*] 飲み物を買わなくても返却ボタンを押すとお金が戻る
 
 class ExampleXCTestTests: XCTestCase {
     
@@ -101,5 +102,11 @@ class ExampleXCTestTests: XCTestCase {
         jihanki.insert(.ten)
         let result = jihanki.pushButton(drink: .coke)
         XCTAssert(result.change == 20)
+    }
+    
+    func test飲み物を買わなくても返却ボタンを押すとお金が戻る(){
+        let jihanki = create100YenJihanki()
+        let result = jihanki.returnMoney()
+        XCTAssert(result == 100)
     }
 }
