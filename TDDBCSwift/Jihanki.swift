@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum CoinType: Int {
+    case hundred = 100
+    case fiveHundred = 500
+}
+
 enum DrinkType: String {
     case coke = "コーラ"
     case oolong = "烏龍茶"
@@ -26,8 +31,8 @@ class Jihanki{
         DrinkType.redbull: 200
     ]
     
-    func insert100en() {
-        deposit += 100
+    func insert(_ coinType: CoinType) {
+        deposit += coinType.rawValue
     }
     
     func pushButton(drink: DrinkType) -> String? {
