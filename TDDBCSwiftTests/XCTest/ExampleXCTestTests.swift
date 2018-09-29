@@ -17,19 +17,19 @@ class ExampleXCTestTests: XCTestCase {
     
     func test100円を入れるとコーラが出る() {
         let jihanki = Jihanki()
-        let result = jihanki.buttonPush(money: 100, drink: "コーラ")
+        let result = jihanki.buttonPush(money: 100, drink: Drink.coke)
         XCTAssert(result == "コーラ")
     }
     
     func test100円以外は入れられない() {
         let jihanki = Jihanki()
-        let result = jihanki.buttonPush(money: 101, drink: "コーラ")
+        let result = jihanki.buttonPush(money: 101, drink: Drink.coke)
         XCTAssert(result != "コーラ")
     }
     
     func test100円を入れると烏龍茶が出る() {
         let jihanki = Jihanki()
-        let result = jihanki.buttonPush(money: 100, drink: "烏龍茶")
+        let result = jihanki.buttonPush(money: 100, drink: Drink.oolong)
         XCTAssert(result == "烏龍茶")
     }
 

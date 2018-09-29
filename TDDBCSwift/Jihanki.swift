@@ -8,14 +8,19 @@
 
 import Foundation
 
+enum Drink: String {
+    case coke = "コーラ"
+    case oolong = "烏龍茶"
+}
+
 struct Jihanki{
     func buttonPush() -> String{
         return "コーラ"
     }
     
-    func buttonPush(money: Int, drink: String) -> String?{
+    func buttonPush(money: Int, drink: Drink) -> String?{
         if money == 100{
-            return drink
+            return drink.rawValue
         }
         return nil
     }
