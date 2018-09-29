@@ -15,24 +15,27 @@ enum DrinkType: String {
     case redbull = "レッドブル"
 }
 
-struct Drink {
-    var name: DrinkType
-    var price: Int
-}
-
 class Jihanki{
     
     var deposit: Int = 0
+    
+    let itemList = [
+        DrinkType.coke: 100,
+        DrinkType.oolong: 100,
+        DrinkType.coffee: 100,
+        DrinkType.redbull: 200
+    ]
     
     func insert100en() {
         deposit += 100
     }
     
-    func buttonPush(drink: Drink) -> String? {
-        if drink.price <= deposit {
-            deposit -= drink.price
-            return drink.name.rawValue
+    func pushButton(drink: DrinkType) -> String? {
+        if let price = itemList[drink], price <= deposit {
+            deposit -= price
+            return drink.rawValue
+        } else {
+            return nil
         }
-        return nil
     }
 }
