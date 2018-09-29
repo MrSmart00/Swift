@@ -17,6 +17,8 @@
 		62D11DAD1F7F580E00739528 /* ExampleQuickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D11DAC1F7F580E00739528 /* ExampleQuickTests.swift */; };
 		62D11DB61F7F614E00739528 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D11DB01F7F601E00739528 /* Nimble.framework */; };
 		62D11DB71F7F614E00739528 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D11DB11F7F601E00739528 /* Quick.framework */; };
+		C5F5185C215F383F0000B837 /* Jihanki.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F5185B215F383F0000B837 /* Jihanki.swift */; };
+		C5F5185D215F383F0000B837 /* Jihanki.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F5185B215F383F0000B837 /* Jihanki.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,7 @@
 		62D11DAC1F7F580E00739528 /* ExampleQuickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleQuickTests.swift; sourceTree = "<group>"; };
 		62D11DB01F7F601E00739528 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		62D11DB11F7F601E00739528 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		C5F5185B215F383F0000B837 /* Jihanki.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jihanki.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,7 @@
 				62D11D8E1F7F56EC00739528 /* Main.storyboard */,
 				2475E38E726EC3D670B210AF /* Sample.swift */,
 				62D11D8C1F7F56EC00739528 /* ViewController.swift */,
+				C5F5185B215F383F0000B837 /* Jihanki.swift */,
 			);
 			path = TDDBCSwift;
 			sourceTree = "<group>";
@@ -268,6 +272,7 @@
 			files = (
 				62D11D8D1F7F56EC00739528 /* ViewController.swift in Sources */,
 				62D11D8B1F7F56EC00739528 /* AppDelegate.swift in Sources */,
+				C5F5185C215F383F0000B837 /* Jihanki.swift in Sources */,
 				2475E28BE43743071E748308 /* Sample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +283,7 @@
 			files = (
 				62D11DAD1F7F580E00739528 /* ExampleQuickTests.swift in Sources */,
 				62D11DA01F7F56EC00739528 /* ExampleXCTestTests.swift in Sources */,
+				C5F5185D215F383F0000B837 /* Jihanki.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
