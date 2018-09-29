@@ -9,6 +9,7 @@ import XCTest
 // TODO: [*] 100円を入れてもレッドブルが買えない
 // TODO: [*] ドリンクの値段のリファクタリングする(要検討)
 // TODO: [*] 100円入れてボタン複数回押してもドリンクは一本しか出ない
+// TODO: [*] 入れたお金に応じて、買えるもののボタンが光る
 
 
 class ExampleXCTestTests: XCTestCase {
@@ -50,5 +51,18 @@ class ExampleXCTestTests: XCTestCase {
         XCTAssert(result1 == "コーラ" && result2 == nil)
     }
     
+    func test100円入れるとコーラボタンが光る() {
+        let jihanki = Jihanki()
+        jihanki.insert100en()
+        let result = jihanki.isEnable(.coke)
+        XCTAssert(result)
+    }
     
+    func test100円入れてもレッドブルボタンが光らない() {
+        let jihanki = Jihanki()
+        jihanki.insert100en()
+        let result = jihanki.isEnable(.redbull)
+        XCTAssertFalse(result)
+    }
+
 }

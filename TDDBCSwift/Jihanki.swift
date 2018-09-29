@@ -38,4 +38,12 @@ class Jihanki{
             return nil
         }
     }
+    
+    func isEnable(_ drink: DrinkType) -> Bool{
+        if let price = itemList[drink], price <= deposit {
+            return true
+        } else {
+            return false
+        }
+    }
 }
